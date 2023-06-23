@@ -4,7 +4,8 @@ import VueRouter from 'vue-router';
 import Home from '../components/Home.vue';
 import Chinese from '../components/Chinese.vue';
 import Japanese_and_Korean from '../components/Japanese_and_Korean.vue';
-import hot from '../components/hot.vue';
+import New from '../components/New.vue';
+import Hot from '../components/Hot.vue';
 
 Vue.use(VueRouter);
 
@@ -17,8 +18,13 @@ const routes = [
         children: [
             {
                 path: '',
-                name: 'hot',
-                component: hot,
+                name: 'New',
+                component: New,
+            },
+            {
+                path: 'Hot',
+                name: 'Hot',
+                component: Hot,
             }
         ]
     },

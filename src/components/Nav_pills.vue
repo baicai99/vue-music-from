@@ -34,8 +34,8 @@ export default {
             label.isActive = true; // 将点击的项的 isActive 属性设置为 true
         },
         goToPage(index) {
-            const routeName = this.hot[index].text
-            const router = ["hot", "hot", "Navbar", "Navbar", "Navbar"]
+            // const routeName = this.hot[index].text
+            const router = ["New", "Hot", "Navbar", "Navbar", "Navbar"]
             this.$router.push({ name: router[index] }); // 跳转到指定的路由
             console.log(router[index]);
         }, 
