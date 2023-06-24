@@ -2,7 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 
 import Login from '../components/Views/Login.vue';
-import SignIn from '../components/Views/SignIn.vue';
+import SignIn from '../components/Views/Register.vue';
 
 import Home from '../components/Views/Home.vue';
 import Chinese from '../components/Views/Chinese.vue';
@@ -65,8 +65,8 @@ const routes = [
         component: Login
     },
     {
-        path: '/SignIn',
-        name: 'SignIn',
+        path: '/Register',
+        name: 'Register',
         component: SignIn
     }
 ];

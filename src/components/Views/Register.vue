@@ -1,7 +1,7 @@
 <template>
   <div class="centered-container">
     <div class="form-signin text-center">
-      <form @submit="login">
+      <form @submit="register">
         <img
           class="mb-4"
           src="../../assets/logo.png"
@@ -30,15 +30,23 @@
           <label for="floatingPassword">密码</label>
         </div>
 
+        <div class="form-floating">
+          <input
+            v-model="confirmPassword"
+            type="password"
+            class="form-control"
+            id="floatingConfirmPassword"
+            placeholder="Confirm Password"
+          />
+          <label for="floatingConfirmPassword">确认密码</label>
+        </div>
+
         <div class="checkbox mb-3">
           <label>
-            <input v-model="rememberMe" type="checkbox" /> 记住我
+            <input v-model="agreeTerms" type="checkbox" /> 同意条款和条件
           </label>
-          <router-link to="/Register" class="registration-link"
-            >注册账号</router-link
-          >
         </div>
-        <button class="w-100 btn btn-lg btn-primary" type="submit">登陆</button>
+        <button class="w-100 btn btn-lg btn-primary" type="submit">注册</button>
         <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
       </form>
     </div>
@@ -51,28 +59,36 @@ export default {
     return {
       email: "",
       password: "",
-      rememberMe: false,
+      confirmPassword: "",
+      agreeTerms: false,
     };
   },
+  mounted() {
+    // 在组件加载时，从 localStorage 中恢复保存的输入值
+    this.email = localStorage.getItem("email") || "";
+    this.password = localStorage.getItem("password") || "";
+    this.confirmPassword = localStorage.getItem("confirmPassword") || "";
+    this.agreeTerms = localStorage.getItem("agreeTerms") === "true";
+  },
   methods: {
-    login(event) {
+    register(event) {
       event.preventDefault();
 
-      // 模拟成功的登录以进行演示
-      const storedEmail = localStorage.getItem("email");
-      const storedPassword = localStorage.getItem("password");
-
-      if (this.email === storedEmail && this.password === storedPassword) {
-        // 登录成功
-        this.$emit("login", storedEmail); // 在父组件中触发登录事件，并传递邮箱作为参数
-        alert("登录成功");
-        // 登录成功后刷新页面
-        this.$router.push("/");
-        window.location.reload();
-        // 跳转到主页
+      if (this.password !== this.confirmPassword) {
+        alert("密码不匹配");
+      } else if (!this.agreeTerms) {
+        alert("请同意条款和条件");
       } else {
-        // 登录失败
-        alert("用户名或密码错误");
+        // 注册成功后保存输入值到 localStorage
+        localStorage.setItem("email", this.email);
+        localStorage.setItem("password", this.password);
+        localStorage.setItem("confirmPassword", this.confirmPassword);
+        localStorage.setItem("agreeTerms", this.agreeTerms.toString());
+
+        alert("注册成功");
+
+        // 跳转到登录页面
+        this.$router.push("/login");
       }
     },
   },
@@ -98,24 +114,13 @@ export default {
   z-index: 2;
 }
 
-.form-signin input[type="email"] {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-}
-
+.form-signin input[type="email"],
 .form-signin input[type="password"] {
   margin-bottom: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
 }
 
 .checkbox {
   display: flex;
   justify-content: space-between;
-}
-
-.registration-link {
-  text-decoration: none;
 }
 </style>
