@@ -9,7 +9,7 @@
 
 <script>
 import Navbar from './components/Navbar.vue'
-import Music_list from './components/Music_list.vue'
+import Music_list from './components/MusicList.vue'
 export default {
   name: 'App',
   components: {

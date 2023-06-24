@@ -26,7 +26,7 @@
 
 <script>
 export default {
-    name: 'Music_items_list',
+    name: 'MusicItemList',
     props: {
         msg: String
     },

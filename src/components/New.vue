@@ -1,21 +1,19 @@
 <template>
   <div>
-    <music_tab
+    <music-tab
       v-for="(song, index) in songs"
       :key="index"
       :song="song"
       :index="index"
-    ></music_tab>
+    ></music-tab>
   </div>
 </template>
 
 <script>
-import music_tab from "./music_tab.vue";
+import MusicTab from "./MusicTab.vue";
+
 export default {
-  name: "hot",
-  props: {
-    msg: String,
-  },
+  name: "Hot",
   data() {
     return {
       songs: [
@@ -92,20 +90,8 @@ export default {
       ],
     };
   },
-  methods: {},
-  computed: {
-    songsWithTypes() {
-      return this.songs.map((song, index) => {
-        return {
-          name: song.name,
-          type: song.type[index],
-          read: song.read[index],
-        };
-      });
-    },
-  },
   components: {
-    music_tab,
+    MusicTab,
   },
 };
 </script>

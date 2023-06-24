@@ -15,11 +15,11 @@
 
 <script>
 import Nav_pills from './Nav_pills.vue'
-import music_tab from './music_tab.vue';
+import music_tab from './MusicTab.vue';
 import hot from './New.vue';
 
 export default {
-    name: 'Music_list',
+    name: 'MusicList',
     props: {
 
     },

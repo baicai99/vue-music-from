@@ -30,7 +30,7 @@
 
 <script>
 export default {
-    name: 'Music_tab',
+    name: 'MusicTab',
     props: {
         song: Object,
         index: Number,

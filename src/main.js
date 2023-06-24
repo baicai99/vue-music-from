@@ -4,11 +4,13 @@ import App from './App.vue'
 // 导入router
 import router from './router/router.js'
 
-// // 导入bootstrap.js
+// // 导入bootstrap
 import 'bootstrap/dist/js/bootstrap.js'
-
-// 导入bootstrap样式
 import 'bootstrap/dist/css/bootstrap.css'
+
+//导入vue-meta
+import Meta from 'vue-meta'
+Vue.use(Meta)
 
 Vue.config.productionTip = false
 
