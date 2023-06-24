@@ -33,7 +33,12 @@
             </li>
           </ul>
           <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
-            <li class="nav-item" v-for="label in user_type" :key="label.text">
+            <li
+              class="nav-item"
+              v-for="(label, index) in user_type"
+              :key="label.text"
+              @click="goToUser(index)"
+            >
               <a class="nav-link" href="#">{{ label.text }}</a>
             </li>
           </ul>
@@ -67,35 +72,46 @@ export default {
       ],
       user_type: [{ text: "消息" }, { text: "登陆" }, { text: "退出" }],
       index: null,
+      userTypeIdx: null,
     };
   },
   methods: {
-    // 设置选中状态
     setActive(label) {
       this.Music_type.forEach((item) => {
-        item.isActive = false; // 先将所有项的 isActive 属性设置为 false
+        item.isActive = false;
       });
-      label.isActive = true; // 将点击的项的 isActive 属性设置为 true
+      label.isActive = true;
     },
-    // 路由跳转
     goToPage(index) {
       this.index = index;
-      const routes = ["Home", "Chinese", "Japanese_and_Korean", "Western", "Remix", "Pure_Music", "Alternate_Dimension", "Exclusive", "Tea_House", "Encyclopedia", "Top-up", "Site_Affairs"];
-      const routeName = routes[this.index]; // 使用 this.index 而不是 index
+      const routes = [
+        "Home",
+        "Chinese",
+        "Japanese_and_Korean",
+        "Western",
+        "Remix",
+        "Pure_Music",
+        "Alternate_Dimension",
+        "Exclusive",
+        "Tea_House",
+        "Encyclopedia",
+        "Top-up",
+        "Site_Affairs",
+      ];
+      const routeName = routes[this.index];
       this.$router.push({ name: routeName });
-      // 检查是否为首页按钮
-      // if (routeName === "Home") {
-      //   // 如果是首页按钮，直接刷新当前页面
-      //   this.$router.go(0);
-      // } else {
-      //   // 如果不是首页按钮，进行正常的路由导航
-      //   this.$router.push({ name: routeName });
-      // }
-      console.log(routeName);
+    },
+    goToUser(index) {
+      this.userTypeIdx = index;
+      const User = ["Message", "Login", "LogOut"];
+      const userRouteName = User[this.userTypeIdx];
+      this.$router.push({ name: userRouteName });
+      // 清除首页按钮的 active 类
+      this.Music_type[0].isActive = false;
     },
   },
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+</style>

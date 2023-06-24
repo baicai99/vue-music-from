@@ -1,47 +1,51 @@
 <template>
-    <div>
-        <div>
-            <div class="card mt-3">
-                <div class="card-header">
-
-                    <div class="row">
-                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                            <button type="button" class="post btn btn-primary w-100 mb-2">发帖</button>
-                        </div>
-                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                            <button type="button" class="post btn btn-primary w-100">签到</button>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
+  <div class="card mt-3">
+    <div class="card-header">
+      <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+          <button type="button" class="post btn btn-primary w-100 mb-2">
+            发帖
+          </button>
         </div>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+          <button type="button" class="post btn btn-primary w-100">
+            签到
+          </button>
+        </div>
+      </div>
     </div>
+    <div class="card-body">
+      <p class="card-text">
+        音乐帮帮忙是一个由音乐爱好者维护的分享平台，旨在解决问题互帮互助。如果您有需求，请注册账号并发布信息，详细描述歌曲信息等，我们会尽力帮您寻找。欢迎访问音乐帮帮忙音乐论坛 - MusicHelp.com。
+      </p>
+      <div class="CommunityOverview row">
+        <div class="col-lg-4 text-center" v-for="item in items" :key="item.text">
+          <div class="tittle">{{ item.text }}</div>
+          <div>{{ item.count }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
 export default {
-    name: 'MusicItemList',
-    props: {
-        msg: String
-    },
-    data() {
-        return {
-
-        };
-    },
-    methods: {
-
-    },
-    components: {
-
-    }
-}
+  name: "MusicItemList",
+  data() {
+    return {
+      items: [
+        { text: "主题数", count: 203529 },
+        { text: "帖子数", count: 32320738 },
+        { text: "用户数", count: 3723927 },
+      ],
+    };
+  },
+};
 </script>
 
-<style lang="less" scoped></style>
+<style scoped>
+.tittle {
+  font-size: 15px;
+  color: gray;
+}
+</style>

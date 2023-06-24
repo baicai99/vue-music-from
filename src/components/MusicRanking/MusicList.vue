@@ -1,14 +1,12 @@
 <template>
-  <div>
-    <div class="card mt-3">
-      <div class="card-header">
-        <NavPills @update:comName="updateComName"></NavPills>
-      </div>
-      <div class="card-body">
-        <keep-alive>
-          <component :is="ComName"></component>
-        </keep-alive>
-      </div>
+  <div class="card mt-3">
+    <div class="card-header">
+      <NavPills @update:comName="updateComName"></NavPills>
+    </div>
+    <div class="card-body">
+      <keep-alive>
+        <component :is="comName" :key="comName"></component>
+      </keep-alive>
     </div>
   </div>
 </template>
@@ -23,7 +21,6 @@ import Day from "./Day.vue";
 
 export default {
   name: "MusicList",
-  props: {},
   components: {
     NavPills,
     New,
@@ -34,12 +31,12 @@ export default {
   },
   data() {
     return {
-      ComName: "New",
+      comName: "New",
     };
   },
   methods: {
     updateComName(name) {
-      this.ComName = name; // 更新组件名称
+      this.comName = name; // 更新组件名称
     },
   },
 };

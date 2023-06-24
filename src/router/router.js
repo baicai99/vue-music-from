@@ -1,6 +1,9 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
+import Login from '../components/Views/Login.vue';
+import SignIn from '../components/Views/SignIn.vue';
+
 import Home from '../components/Views/Home.vue';
 import Chinese from '../components/Views/Chinese.vue';
 import Japanese_and_Korean from '../components/Views/JapaneseAndKorean.vue';
@@ -55,6 +58,16 @@ const routes = [
         path: '/Japanese_and_Korean',
         name: 'Japanese_and_Korean',
         component: Japanese_and_Korean
+    },
+    {
+        path: '/Login',
+        name: 'Login',
+        component: Login
+    },
+    {
+        path: '/SignIn',
+        name: 'SignIn',
+        component: SignIn
     }
 ];
 
