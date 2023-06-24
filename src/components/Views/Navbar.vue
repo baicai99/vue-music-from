@@ -84,13 +84,13 @@ export default {
       const routeName = routes[this.index]; // 使用 this.index 而不是 index
       this.$router.push({ name: routeName });
       // 检查是否为首页按钮
-      if (routeName === "Home") {
-        // 如果是首页按钮，直接刷新当前页面
-        this.$router.go(0);
-      } else {
-        // 如果不是首页按钮，进行正常的路由导航
-        this.$router.push({ name: routeName });
-      }
+      // if (routeName === "Home") {
+      //   // 如果是首页按钮，直接刷新当前页面
+      //   this.$router.go(0);
+      // } else {
+      //   // 如果不是首页按钮，进行正常的路由导航
+      //   this.$router.push({ name: routeName });
+      // }
       console.log(routeName);
     },
   },

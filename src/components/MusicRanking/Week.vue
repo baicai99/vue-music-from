@@ -1,11 +1,13 @@
 <template>
   <div>
-    <h1>Hot</h1>
+    <h1>week</h1>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  name: "Week",
+};
 </script>
 
 <style lang="less" scoped>

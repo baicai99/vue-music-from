@@ -8,8 +8,8 @@
 </template>
 
 <script>
-import Navbar from './components/Navbar.vue'
-import Music_list from './components/MusicList.vue'
+import Navbar from './components/Views/Navbar.vue'
+import Music_list from './components/MusicRanking/MusicList.vue'
 export default {
   name: 'App',
   components: {

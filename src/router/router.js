@@ -1,11 +1,14 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
-import Home from '../components/Home.vue';
-import Chinese from '../components/Chinese.vue';
-import Japanese_and_Korean from '../components/Japanese_and_Korean.vue';
-import New from '../components/New.vue';
-import Hot from '../components/Hot.vue';
+import Home from '../components/Views/Home.vue';
+import Chinese from '../components/Views/Chinese.vue';
+import Japanese_and_Korean from '../components/Views/JapaneseAndKorean.vue';
+import New from '../components/MusicRanking/New.vue';
+import Hot from '../components/MusicRanking/Hot.vue';
+import Month from '../components/MusicRanking/Month.vue';
+import Week from '../components/MusicRanking/Week.vue';
+import Day from '../components/MusicRanking/Day.vue';
 
 Vue.use(VueRouter);
 
@@ -25,7 +28,22 @@ const routes = [
                 path: 'Hot',
                 name: 'Hot',
                 component: Hot,
-            }
+            },
+            {
+                path: 'Month',
+                name: 'Month',
+                component: Month,
+            },
+            {
+                path: 'Week',
+                name: 'Week',
+                component: Week,
+            },
+            {
+                path: 'Day',
+                name: 'Day',
+                component: Day,
+            },
         ]
     },
     {

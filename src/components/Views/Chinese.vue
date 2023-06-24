@@ -5,8 +5,8 @@
 </template>
 
 <script>
-import Music_list from "./MusicList.vue";
-import MusicItemList from "./MusicItemsList.vue";
+import Music_list from "../MusicRanking/MusicList.vue";
+import MusicItemList from "../MusicRanking/MusicItemsList.vue";
 
 export default {
   name: "Chinese",
