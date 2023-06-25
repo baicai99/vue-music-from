@@ -4,6 +4,8 @@ import VueRouter from 'vue-router';
 import Login from '../components/Views/Login.vue';
 import SignIn from '../components/Views/Register.vue';
 
+import Pagination from '../components/Views/Pagination.vue';
+
 import Home from '../components/Views/Home.vue';
 import Chinese from '../components/Views/Chinese.vue';
 import Japanese_and_Korean from '../components/Views/JapaneseAndKorean.vue';
@@ -68,7 +70,7 @@ const routes = [
         path: '/Register',
         name: 'Register',
         component: SignIn
-    }
+    },
 ];
 
 
