@@ -4,7 +4,7 @@ import VueRouter from 'vue-router';
 import Login from '../components/Views/Login.vue';
 import SignIn from '../components/Views/Register.vue';
 
-import Pagination from '../components/Views/Pagination.vue';
+import Post from '../components/Views/Post.vue';
 
 import Home from '../components/Views/Home.vue';
 import Chinese from '../components/Views/Chinese.vue';
@@ -15,14 +15,15 @@ import Month from '../components/MusicRanking/Month.vue';
 import Week from '../components/MusicRanking/Week.vue';
 import Day from '../components/MusicRanking/Day.vue';
 
+
 Vue.use(VueRouter);
 
 const routes = [
     // 配置主页路由
     {
         path: '/',
-        name: 'Home',
         component: Home,
+        name: 'Home',
         children: [
             {
                 path: '',
@@ -71,6 +72,11 @@ const routes = [
         name: 'Register',
         component: SignIn
     },
+    {
+        path: '/Post',
+        name: 'Post',
+        component: Post
+    }
 ];
 
 

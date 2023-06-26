@@ -60,6 +60,7 @@ export default {
   methods: {
     post() {
       // 处理发帖逻辑
+      this.$router.push("/Post");
     },
     checkIn() {
       const email = localStorage.getItem("email");
