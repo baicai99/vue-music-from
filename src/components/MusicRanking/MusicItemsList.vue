@@ -2,7 +2,7 @@
   <div class="card mt-3">
     <div class="card-header">
       <div class="row">
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <div class="col">
           <button
             type="button"
             class="post btn btn-primary w-100 mb-2"
@@ -11,7 +11,7 @@
             发帖
           </button>
         </div>
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <div class="col">
           <button
             type="button"
             class="post btn btn-primary w-100"
@@ -27,12 +27,10 @@
         音乐帮帮忙是一个由音乐爱好者维护的分享平台，旨在解决问题互帮互助。如果您有需求，请注册账号并发布信息，详细描述歌曲信息等，我们会尽力帮您寻找。欢迎访问音乐帮帮忙音乐论坛
         - MusicHelp.com。
       </p>
+
+      <!-- 主题数、帖子数、用户数 -->
       <div class="CommunityOverview row">
-        <div
-          class="col-lg-4 text-center"
-          v-for="item in items"
-          :key="item.text"
-        >
+        <div class="col text-center" v-for="item in items" :key="item.text">
           <div class="tittle">{{ item.text }}</div>
           <div>{{ item.count }}</div>
         </div>
