@@ -1,7 +1,7 @@
 <template>
   <div class="card mt-3">
     <div class="card-header">
-      <NavPills @update:comName="updateComName"></NavPills>
+      <MusicTabNav @update:comName="updateComName"></MusicTabNav>
     </div>
     <div class="card-body">
       <keep-alive>
@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import NavPills from "./NavPills.vue";
+import MusicTabNav from "./MusicTabNav.vue";
 import New from "./New.vue";
 import Hot from "./Hot.vue";
 import Month from "./Month.vue";
@@ -22,7 +22,7 @@ import Day from "./Day.vue";
 export default {
   name: "MusicList",
   components: {
-    NavPills,
+    MusicTabNav,
     New,
     Hot,
     Month,

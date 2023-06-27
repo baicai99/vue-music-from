@@ -14,8 +14,8 @@
 </template>
 
 <script>
-import MusicList from "../MusicRanking/MusicList.vue";
-import MusicItemsList from "../MusicRanking/MusicItemsList.vue";
+import MusicList from "../MusicRanking/MusicListViewer.vue";
+import MusicItemsList from "../MusicRanking/MusicCommunityOverview.vue";
 
 export default {
   name: "Home",

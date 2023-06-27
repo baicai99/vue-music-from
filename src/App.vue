@@ -11,7 +11,7 @@
 
 <script>
 import Navbar from "./components/Views/Navbar.vue";
-import Music_list from "./components/MusicRanking/MusicList.vue";
+import MusicList from "./components/MusicRanking/MusicListViewer.vue";
 import Pagination from "./components/Views/Pagination.vue";
 import Footer from "./components/Views/Footer.vue";
 
@@ -24,20 +24,17 @@ export default {
   },
   components: {
     Navbar,
-    Music_list,
+    MusicList,
     Pagination,
     Footer,
   },
-  methods: {
-    beforeRouteUpdate(to, from, next) {
-      // 在路由导航之前检查目标路由，根据需要修改组件的显示状态
-      if (to.path === "/post") {
-        this.showPagination = false;
-      } else {
-        this.showPagination = true;
-      }
-      next();
-    },
+  created() {
+    // 在组件创建时检查当前路由，根据需要修改组件的显示状态
+    if (this.$route.path === "/Post") {
+      this.showPagination = false;
+    } else {
+      this.showPagination = true;
+    }
   },
 };
 </script>

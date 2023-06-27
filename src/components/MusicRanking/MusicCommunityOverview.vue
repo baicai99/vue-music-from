@@ -2,7 +2,7 @@
   <div class="card mt-3">
     <div class="card-header">
       <div class="row">
-        <div class="col">
+        <div class="col-lg-6 col-sm-12">
           <button
             type="button"
             class="post btn btn-primary w-100 mb-2"
@@ -11,7 +11,7 @@
             发帖
           </button>
         </div>
-        <div class="col">
+        <div class="col-lg-6 col-sm-12">
           <button
             type="button"
             class="post btn btn-primary w-100"

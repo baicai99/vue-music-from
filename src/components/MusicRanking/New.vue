@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import MusicTab from "./MusicTab.vue";
+import MusicTab from "./MusicCard.vue";
 
 export default {
   name: "Hot",
