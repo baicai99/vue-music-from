@@ -16,7 +16,10 @@ npm run build
 ```
 
 # 预览
-![screencapture-localhost-8080-2023-06-23-13_52_32](https://github.com/baicai99/vue-music-from/assets/101706274/e41f62e6-d0af-458b-a362-3447e01c9ecb)
+![screencapture-file-Users-zhengjiyuan-Desktop-vue-music-from-dist-index-html-2023-06-27-18_54_01](https://github.com/baicai99/vue-music-from/assets/101706274/6e991620-a8f9-4c48-ba4a-862ee5834263)
+![screencapture-file-Users-zhengjiyuan-Desktop-vue-music-from-dist-index-html-2023-06-27-18_54_08](https://github.com/baicai99/vue-music-from/assets/101706274/f3bd6d06-455d-496d-b411-de53f89f19e5)
+![screencapture-file-Users-zhengjiyuan-Desktop-vue-music-from-dist-index-html-2023-06-27-18_54_18](https://github.com/baicai99/vue-music-from/assets/101706274/839665f8-bf5f-4fa7-b6b8-44d660cbd204)
+
 
 # 通用免责声明/General disclaimer
 ## 中文
